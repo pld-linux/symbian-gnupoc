@@ -14,7 +14,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 This is a collection of patched tools and scripts for compiling them,
 for building Symbian applications.
 
-%description -l pl
+%description -l pl.UTF-8
 Kolekcja poprawionych narzędzi i skryptów do ich kompilacji,
 umożliwiających budowanie Symbianowych aplikacji.
 
