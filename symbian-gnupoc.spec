@@ -1,12 +1,12 @@
 Summary:	Symbian development on Linux
 Summary(pl.UTF-8):	Programowanie na Symbiana na Linuksie
 Name:		symbian-gnupoc
-Version:	1.07
+Version:	1.09
 Release:	1
 License:	GPL/distributable
 Group:		Developement
 Source0:	http://www.martin.st/symbian/gnupoc-package-%{version}.tar.gz
-# Source0-md5:	4d3f903c3952b028b54e3ff5c657e527
+# Source0-md5:	67b86eb218fe390ef0eddf837fbce796
 URL:		http://www.martin.st/symbian/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
