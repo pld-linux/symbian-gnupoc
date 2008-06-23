@@ -1,10 +1,11 @@
+# TODO: optflags
 Summary:	Symbian development on Linux
 Summary(pl.UTF-8):	Programowanie na Symbiana na Linuksie
 Name:		symbian-gnupoc
 Version:	1.09
 Release:	1
 License:	GPL/distributable
-Group:		Developement
+Group:		Developement/Tools
 Source0:	http://www.martin.st/symbian/gnupoc-package-%{version}.tar.gz
 # Source0-md5:	67b86eb218fe390ef0eddf837fbce796
 URL:		http://www.martin.st/symbian/
@@ -16,7 +17,7 @@ for building Symbian applications.
 
 %description -l pl.UTF-8
 Kolekcja poprawionych narzędzi i skryptów do ich kompilacji,
-umożliwiających budowanie Symbianowych aplikacji.
+umożliwiających budowanie aplikacji symbianowych.
 
 %prep
 %setup -n gnupoc-package-%{version}
@@ -24,32 +25,22 @@ umożliwiających budowanie Symbianowych aplikacji.
 %build
 cd tools
 
-cd petran-1.1.0
-%{__make}
-cd ..
+%{__make} -C petran-1.1.0
 
-cd bmconv-1.1.0-2
-%{__make}
-cd ..
+%{__make} -C bmconv-1.1.0-2
 
-cd rcomp-7.0.1
-%{__make}
-cd ..
+%{__make} -C rcomp-7.0.1
 
-cd makesis-4
-%{__make}
-cd ..
+%{__make} -C makesis-4
 
-cd make-3.81
+cd tools/make-3.81
 %configure
 %{__make}
 cd ..
 
-cd elf2e32
-%{__make} -j1 -f Makefile.local-libelf libelf.a elf2e32
-cd ..
+%{__make} -C elf2e32 -f Makefile.local-libelf -j1 libelf.a elf2e32
 
-%{__cxx} mifconv.cpp -o mifconv
+%{__cxx} %{rpmldflags} %{rpmcxxflags} mifconv.cpp -o mifconv
 
 %install
 rm -rf $RPM_BUILD_ROOT
