@@ -26,14 +26,11 @@ umożliwiających budowanie aplikacji symbianowych.
 cd tools
 
 %{__make} -C petran-1.1.0
-
 %{__make} -C bmconv-1.1.0-2
-
 %{__make} -C rcomp-7.0.1
-
 %{__make} -C makesis-4
 
-cd tools/make-3.81
+cd make-3.81
 %configure
 %{__make}
 cd ..
